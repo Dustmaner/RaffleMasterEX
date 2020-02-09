@@ -22,14 +22,7 @@ namespace RaffleMastereitor
     public partial class MainWindow : Window
     {
         // Logger
-        //StreamWriter sb = new StreamWriter("logg.txt");
         string logLines;
-
-
-        //using (StreamWriter sw = File.AppendText("log.txt"));
-        //FileStream fs = new FileStream("log.txt", FileMode.Append,FileAccess.ReadWrite,FileShare.ReadWrite);
-
-
 
         // How many players
         int participantsNumber = 0;
@@ -180,7 +173,6 @@ namespace RaffleMastereitor
             {
                 resultadoDelRoll.FontSize = 12; // the following message is wordy, so set font smaller
                 resultadoDelRoll.Text = "Selecciona un numero de particicipantes primero";
-                //sb.WriteLine(resultadoDelRoll.Text); // log
             }
             // ELSE reduce the amount of "lives" a random player has
             else

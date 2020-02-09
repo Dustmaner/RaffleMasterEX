@@ -26,8 +26,8 @@
                 <RowDefinition Height=".75*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition x:Name="colDef1"/>
-                <ColumnDefinition x:Name="colDef2"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
