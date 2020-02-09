@@ -1,12 +1,78 @@
-﻿<Window x:Class="RaffleMastereitor.MainWindow"
+﻿<Window x:Name="Raffle_Master" x:Class="RaffleMastereitor.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RaffleMastereitor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Raffle Master" Height="450" Width="800">
     <Grid>
+        <Label Content="Select how many victims: " HorizontalAlignment="Left" Margin="10,24,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontWeight="Bold" FontSize="32" Width="405" Height="44"/>
+        <Button Content="Roll Once" HorizontalAlignment="Left" Margin="95,239,0,0" VerticalAlignment="Top" Width="158" Click="Button_Click" Height="81" FontSize="24" FontFamily="Yu Gothic UI Semibold" FontWeight="Bold"/>
+        <ComboBox x:Name="cuantosParticipantesBox" HorizontalAlignment="Left" Margin="95,102,0,0" VerticalAlignment="Top" Width="158" Height="38" FontSize="20">
+            <ComboBoxItem Content="1" HorizontalAlignment="Left" Width="158" Selected="itemSelected1"/>
+            <ComboBoxItem Content="2" HorizontalAlignment="Left" Width="158" Selected="itemSelected2"/>
+            <ComboBoxItem Content="3" HorizontalAlignment="Left" Width="158" Selected="itemSelected3"/>
+            <ComboBoxItem Content="4" HorizontalAlignment="Left" Width="158" Selected="itemSelected4"/>
+            <ComboBoxItem Content="5" HorizontalAlignment="Left" Width="158" Selected="itemSelected5"/>
+            <ComboBoxItem Content="6" HorizontalAlignment="Left" Width="158" Selected="itemSelected6"/>
+            <ComboBoxItem Content="7" HorizontalAlignment="Left" Width="158" Selected="itemSelected7"/>
+            <ComboBoxItem Content="8" HorizontalAlignment="Left" Width="158" Selected="itemSelected8"/>
+        </ComboBox>
+        <Grid x:Name="resultadosDeRifa" HorizontalAlignment="Center" Height="110" Margin="429,101.883,21,0" VerticalAlignment="Top" Width="342" UseLayoutRounding="False" ShowGridLines="True">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition/>
+                <RowDefinition Height=".75*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="colDef1"/>
+                <ColumnDefinition x:Name="colDef2"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock FontSize="16" FontWeight="Bold" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">Top</TextBlock>
+            <TextBlock FontSize="24" FontWeight="Bold" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">1</TextBlock>
+            <TextBlock FontSize="24" FontWeight="Bold" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">2</TextBlock>
+            <TextBlock FontSize="24" FontWeight="Bold" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center">3</TextBlock>
+            <TextBlock FontSize="24" FontWeight="Bold" Grid.Row="0" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center">4</TextBlock>
+            <TextBlock FontSize="24" FontWeight="Bold" Grid.Row="0" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center">5</TextBlock>
+            <TextBlock FontSize="24" FontWeight="Bold" Grid.Row="0" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center">6</TextBlock>
+            <TextBlock FontSize="24" FontWeight="Bold" Grid.Row="0" Grid.Column="7" HorizontalAlignment="Center" VerticalAlignment="Center">7</TextBlock>
+            <TextBlock FontSize="24" FontWeight="Bold" Grid.Row="0" Grid.Column="8" HorizontalAlignment="Center" VerticalAlignment="Center">8</TextBlock>
+
+            <TextBlock FontSize="24" FontWeight="Bold" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFE01212">♥</TextBlock>
+            <TextBlock x:Name="vidas1" FontSize="24" FontWeight="Bold" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">0</TextBlock>
+            <TextBlock x:Name="vidas2" FontSize="24" FontWeight="Bold" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">0</TextBlock>
+            <TextBlock x:Name="vidas3" FontSize="24" FontWeight="Bold" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center">0</TextBlock>
+            <TextBlock x:Name="vidas4" FontSize="24" FontWeight="Bold" Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center">0</TextBlock>
+            <TextBlock x:Name="vidas5" FontSize="24" FontWeight="Bold" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center">0</TextBlock>
+            <TextBlock x:Name="vidas6" FontSize="24" FontWeight="Bold" Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center">0</TextBlock>
+            <TextBlock x:Name="vidas7" FontSize="24" FontWeight="Bold" Grid.Row="1" Grid.Column="7" HorizontalAlignment="Center" VerticalAlignment="Center">0</TextBlock>
+            <TextBlock x:Name="vidas8" FontSize="24" FontWeight="Bold" Grid.Row="1" Grid.Column="8" HorizontalAlignment="Center" VerticalAlignment="Center">0</TextBlock>
+
+            <Button x:Name="instaKill1"  Grid.Row="2" Grid.Column="1" Content="Reset" Click="instaKill1_Click" />
+            <Button x:Name="instaKill2"  Grid.Row="2" Grid.Column="2" Content="Reset" Click="instaKill2_Click"/>
+            <Button x:Name="instaKill3"  Grid.Row="2" Grid.Column="3" Content="Reset" Click="instaKill3_Click"/>
+            <Button x:Name="instaKill4"  Grid.Row="2" Grid.Column="4" Content="Reset" Click="instaKill4_Click"/>
+            <Button x:Name="instaKill5"  Grid.Row="2" Grid.Column="5" Content="Reset" Click="instaKill5_Click"/>
+            <Button x:Name="instaKill6"  Grid.Row="2" Grid.Column="6" Content="Reset" Click="instaKill6_Click"/>
+            <Button x:Name="instaKill7"  Grid.Row="2" Grid.Column="7" Content="Reset" Click="instaKill7_Click"/>
+            <Button x:Name="instaKill8"  Grid.Row="2" Grid.Column="8" Content="Reset" Click="instaKill8_Click"/>
+            
+        </Grid>
+        <TextBlock x:Name="gridTitle" HorizontalAlignment="Left" Margin="458,46,0,0" TextWrapping="Wrap" Text="Vidas Restantes" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="40" Width="313"/>
+        <Rectangle Fill="#FFCDCDFF" HorizontalAlignment="Left" Height="81" Margin="429,239,0,0" Stroke="Black" VerticalAlignment="Top" Width="342"/>
+        <Rectangle Fill="#FFDBE7FF" HorizontalAlignment="Left" Height="52" Margin="486,325,0,0" Stroke="Black" VerticalAlignment="Top" Width="231" RenderTransformOrigin="0.5,0.5"/>
+        <TextBlock x:Name="resultadoDelRoll" HorizontalAlignment="Left" Margin="429,239,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="342" Height="81" FontFamily="Yu Gothic UI Semibold" FontSize="28"/>
+        <TextBlock x:Name="numeroDeRoll" HorizontalAlignment="Left" Margin="486,325,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="231" Height="52" FontFamily="Yu Gothic UI Semibold" FontSize="28"/>
         
+
     </Grid>
 </Window>
